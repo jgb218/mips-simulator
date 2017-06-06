@@ -160,8 +160,6 @@ Loop:
 	add $s0,$a0,$t0
 	sw $s0,20($sp)	#store aluout on stack
 	
-	jal Traceout	#print data to console
-	
 	#opcode = extract(ir,31,26);
 	lw $a0,0($sp)	#load ir to Extract x argument
 	li $a1,31		#set left argument
@@ -323,7 +321,7 @@ Endloop:
 	lw $s0,20($sp)	#load aluout
 	addi $sp,$sp,24
 	###########
-	#jal Traceout	#print data to console
+	jal Traceout	#print data to console
 	addi $t4, $t4, 1  	#increment counter
 	j Loop
 
